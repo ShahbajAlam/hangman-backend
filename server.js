@@ -24,7 +24,7 @@ app.get("/words", async (_, res) => {
                     properties: {
                         word: {
                             type: SchemaType.STRING,
-                            description: "A random and very simple english word",
+                            description: "A random and simple english word",
                         },
                         description: {
                             type: SchemaType.STRING,
@@ -37,7 +37,7 @@ app.get("/words", async (_, res) => {
     });
 
     const prompt =
-        "Generate a single random, very simple english word with length 5 to 10 with its good explanation";
+        "Generate a single random simple english word with length 5 to 10 with its good explanation";
 
     const result = await model.generateContent(prompt);
     return res.json({ result: result.response.text() });
